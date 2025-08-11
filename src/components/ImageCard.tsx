@@ -14,6 +14,7 @@ export default function ImageCard({ src, alt, title, description }: ImageCardPro
           alt={alt}
           className="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]"
           loading="lazy"
+          decoding="async"
         />
       </div>
       {(title || description) && (
@@ -25,5 +26,8 @@ export default function ImageCard({ src, alt, title, description }: ImageCardPro
     </article>
   )
 }
+
+
+
 
 

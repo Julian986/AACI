@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { Outlet, Link, NavLink } from 'react-router-dom'
 import site from '../content/site'
 import WhatsappFloat from '../components/WhatsappFloat'
@@ -20,7 +20,7 @@ function Header() {
     <header className="bg-white sticky top-0 z-50 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center gap-4">
         <Link to="/" className="flex items-center gap-2 shrink-0" aria-label="AACI Mar del Plata">
-          <img src={site.logoUrl || '/logo-aaci.svg'} alt="AACI" className="h-8 w-auto rounded" />
+          <img src={site.logoUrl || '/logo-aaci.svg'} alt="AACI" className="h-8 w-auto rounded" decoding="async" />
           <span className="sr-only">AACI Mar del Plata</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-slate-800">
@@ -135,7 +135,7 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div>
-            <img src={site.logoUrl || '/logo-aaci.svg'} alt="AACI" className="h-7 w-auto rounded" />
+            <img src={site.logoUrl || '/logo-aaci.svg'} alt="AACI" className="h-7 w-auto rounded" decoding="async" />
             <p className="mt-6 text-base leading-7 text-gray-600 max-w-sm">
               Enseñamos inglés con excelencia y calidez desde 1944 en Mar del Plata.
             </p>
@@ -202,6 +202,38 @@ function Footer() {
 }
 
 export default function Layout() {
+  useEffect(() => {
+    // JSON-LD de organización
+    const scriptId = 'jsonld-organization'
+    let script = document.getElementById(scriptId) as HTMLScriptElement | null
+    if (!script) {
+      script = document.createElement('script')
+      script.id = scriptId
+      script.type = 'application/ld+json'
+      document.head.appendChild(script)
+    }
+    const jsonld = {
+      '@context': 'https://schema.org',
+      '@type': 'EducationalOrganization',
+      'name': site.name,
+      'url': window.location.origin,
+      'logo': site.logoUrl || '/logo-aaci.svg',
+      'address': {
+        '@type': 'PostalAddress',
+        'addressLocality': site.contact?.address || 'Mar del Plata',
+        'addressCountry': 'AR',
+      },
+      'contactPoint': [{
+        '@type': 'ContactPoint',
+        'telephone': site.contact?.phone,
+        'contactType': 'customer service',
+        'areaServed': 'AR',
+        'availableLanguage': ['es']
+      }]
+    }
+    script.textContent = JSON.stringify(jsonld)
+  }, [])
+
   return (
     <div className="min-h-screen flex flex-col">
       <a href="#contenido" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white text-slate-900 px-3 py-2 rounded shadow">Saltar al contenido</a>

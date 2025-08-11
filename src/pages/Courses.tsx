@@ -2,11 +2,69 @@ import site from '../content/site'
 import Seo from '../components/Seo'
 import Section from '../components/Section'
 import CourseCard from '../components/CourseCard'
+import FAQ from '../components/FAQ'
 
 export default function Courses() {
   return (
     <div>
-      <Seo title="Cursos — AACI Mar del Plata" description="Cursos de inglés para niños, adolescentes y adultos. Niveles principiante, intermedio y avanzado." />
+      <Seo
+        title="Cursos — AACI Mar del Plata"
+        description="Cursos de inglés para niños, adolescentes y adultos. Niveles principiante, intermedio y avanzado."
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: [
+            {
+              '@type': 'Question',
+              name: '¿Cómo se define el nivel?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text:
+                  'Realizamos una entrevista y diagnóstico inicial sin costo para ubicar el mejor punto de partida. Si ya estudiás inglés, contemplamos certificados previos y una breve evaluación.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: '¿Cuándo inician y hay vacantes?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text:
+                  'El ciclo lectivo va de marzo a diciembre. Mantenemos inscripciones abiertas durante el año según disponibilidad de vacantes. Consultá por lugares y turnos por WhatsApp.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: '¿Trabajan con grupos reducidos?',
+              acceptedAnswer: { '@type': 'Answer', text: 'Sí, priorizamos grupos de 8–12 estudiantes.' },
+            },
+            {
+              '@type': 'Question',
+              name: '¿Preparan exámenes internacionales?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Sí, preparación para Cambridge y Trinity con simulacros y acompañamiento durante la inscripción.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: '¿Qué edades y niveles cubren?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Niños, adolescentes y adultos. Niveles: Principiante, Intermedio y Avanzado.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: '¿Cómo me inscribo?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text:
+                  'Podés escribirnos por email o WhatsApp, o completar el formulario de contacto. Te proponemos una visita y nivelación inicial.',
+              },
+            },
+          ],
+        }}
+      />
 
       <Section title="Cursos" subtitle={`Niños, adolescentes y adultos. Niveles: ${site.courses.levels.join(', ')}.`}>
         <div className="grid gap-6 md:grid-cols-3">
@@ -18,6 +76,18 @@ export default function Courses() {
 
       <Section title="Plan de estudios por año" subtitle="Contenidos por año con lecturas sugeridas (6º año).">
         <div className="grid gap-6 md:grid-cols-3">
+          <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+            <h3 className="font-semibold text-slate-900">1º año</h3>
+            <p className="mt-1 text-sm text-slate-700">{site.curriculum.year1}</p>
+          </article>
+          <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+            <h3 className="font-semibold text-slate-900">2º año</h3>
+            <p className="mt-1 text-sm text-slate-700">{site.curriculum.year2}</p>
+          </article>
+          <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+            <h3 className="font-semibold text-slate-900">3º año</h3>
+            <p className="mt-1 text-sm text-slate-700">{site.curriculum.year3}</p>
+          </article>
           <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
             <h3 className="font-semibold text-slate-900">4º año</h3>
             <p className="mt-1 text-sm text-slate-700">{site.curriculum.year4}</p>
@@ -55,26 +125,69 @@ export default function Courses() {
         </div>
       </Section>
 
-      <Section title="Preguntas frecuentes">
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-            <h3 className="font-semibold text-slate-900">¿Cómo se define el nivel?</h3>
-            <p className="mt-2 text-sm text-slate-700">Sugerimos un diagnóstico inicial para ubicar el mejor punto de partida.</p>
-          </div>
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-            <h3 className="font-semibold text-slate-900">¿Hay grupos reducidos?</h3>
-            <p className="mt-2 text-sm text-slate-700">Sí, priorizamos la atención personalizada en todos los cursos.</p>
-          </div>
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-            <h3 className="font-semibold text-slate-900">¿Preparan exámenes?</h3>
-            <p className="mt-2 text-sm text-slate-700">Sí, contamos con preparación para Cambridge y Trinity.</p>
-          </div>
-          <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-            <h3 className="font-semibold text-slate-900">¿Ofrecen clases para adultos?</h3>
-            <p className="mt-2 text-sm text-slate-700">Sí, con foco práctico para trabajo, viajes y desarrollo personal.</p>
-          </div>
-        </div>
-      </Section>
+      <FAQ
+        title="Preguntas frecuentes"
+        items={[
+          {
+            value: 'faq-1',
+            question: '¿Cómo se define el nivel? ',
+            answer: (
+              <>
+                <p>
+                  Realizamos una entrevista y diagnóstico inicial sin costo para ubicar el mejor punto de partida según tus objetivos.
+                </p>
+                <p>
+                  Si ya estudiás inglés, contemplamos certificados previos y una breve evaluación de nivel.
+                </p>
+              </>
+            ),
+          },
+          {
+            value: 'faq-2',
+            question: '¿Cuándo inician y hay vacantes?',
+            answer: (
+              <>
+                <p>
+                  El ciclo lectivo va de marzo a diciembre. Mantenemos inscripciones abiertas durante todo el año según disponibilidad de vacantes.
+                </p>
+                <p>
+                  Consultá por lugares y turnos por WhatsApp: <a className="text-indigo-700 hover:underline" href={site.links.whatsappUrl} target="_blank" rel="noreferrer">{site.contact.phone}</a>.
+                </p>
+              </>
+            ),
+          },
+          {
+            value: 'faq-3',
+            question: '¿Trabajan con grupos reducidos?',
+            answer: 'Sí. En AACI priorizamos grupos de 8–12 estudiantes para asegurar participación y seguimiento personalizado.',
+          },
+          {
+            value: 'faq-4',
+            question: '¿Preparan exámenes internacionales?',
+            answer: 'Sí. Ofrecemos preparación para Cambridge y Trinity con simulacros y acompañamiento durante la inscripción.',
+          },
+          {
+            value: 'faq-5',
+            question: '¿Qué edades y niveles cubren?',
+            answer: `Niños, adolescentes y adultos. Niveles: ${site.courses.levels.join(', ')}.`,
+          },
+          {
+            value: 'faq-6',
+            question: '¿Cómo me inscribo?',
+            answer: (
+              <>
+                <p>
+                  Podés escribirnos a <a className="text-indigo-700 hover:underline" href={`mailto:${site.contact.email}`}>{site.contact.email}</a>,
+                  contactarnos por WhatsApp o completar el formulario en la sección Contacto.
+                </p>
+                <p>
+                  Te proponemos una visita para conocer la institución y realizar la nivelación inicial.
+                </p>
+              </>
+            ),
+          },
+        ]}
+      />
     </div>
   )
 }

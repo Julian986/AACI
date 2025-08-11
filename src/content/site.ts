@@ -48,6 +48,9 @@ const site = {
     levels: ['Principiante', 'Intermedio', 'Avanzado'],
   },
   curriculum: {
+    year1: 'Saludos y presentaciones, alfabeto y números, colores, objetos del aula y vocabulario básico. Comprensión y producción de frases simples (I am, You are). Canciones y juegos fonéticos.',
+    year2: 'Rutinas diarias y familia, descripciones físicas y de personalidad, vocabulario de casa/escuela. Presente simple (afirmativa/negativa/preguntas) y pronunciación. Lecturas cortas con apoyo visual.',
+    year3: 'Tiempo y clima, lugares de la ciudad y direcciones, actividades de tiempo libre. Introducción a pasado simple (verbos regulares) y conectores básicos. Storytelling con imágenes.',
     year4: 'Geografía: vocabulario, lectura y presentación de regiones.',
     year5: 'Historia: eventos, biografías y líneas de tiempo.',
     year6: 'Literatura inglesa: cuentos/poemas, análisis y expresión escrita.',

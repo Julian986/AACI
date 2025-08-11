@@ -9,7 +9,14 @@ export default function Gallery() {
       <Section title="Galería" subtitle="Imágenes de la comunidad (placeholders, reemplazar por fotos reales).">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {site.gallery.map((img) => (
-            <img key={img.src} src={img.src} alt={img.alt} className="w-full h-40 object-cover rounded-md border border-slate-200" loading="lazy" />
+            <img
+              key={img.src}
+              src={img.src}
+              alt={img.alt}
+              className="w-full h-40 object-cover rounded-md border border-slate-200"
+              loading="lazy"
+              decoding="async"
+            />
           ))}
         </div>
       </Section>

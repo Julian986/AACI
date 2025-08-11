@@ -4,9 +4,11 @@ type SeoProps = {
   title: string
   description?: string
   image?: string
+  canonical?: string
+  jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>
 }
 
-export default function Seo({ title, description, image = '/logo-aaci.svg' }: SeoProps) {
+export default function Seo({ title, description, image = '/logo-aaci.svg', canonical, jsonLd }: SeoProps) {
   useEffect(() => {
     document.title = title
     const ensureMeta = (name: string, attr: 'name' | 'property' = 'name') => {
@@ -29,10 +31,38 @@ export default function Seo({ title, description, image = '/logo-aaci.svg' }: Se
     ensureMeta('og:type', 'property').setAttribute('content', 'website')
     ensureMeta('og:image', 'property').setAttribute('content', image)
     ensureMeta('twitter:card', 'property').setAttribute('content', 'summary_large_image')
-  }, [title, description, image])
+
+    // Canonical
+    const canonicalHref = canonical || window.location.href
+    let linkCanonical = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
+    if (!linkCanonical) {
+      linkCanonical = document.createElement('link')
+      linkCanonical.setAttribute('rel', 'canonical')
+      document.head.appendChild(linkCanonical)
+    }
+    linkCanonical.setAttribute('href', canonicalHref)
+
+    // JSON-LD por página
+    const scriptId = 'jsonld-page'
+    let script = document.getElementById(scriptId) as HTMLScriptElement | null
+    if (jsonLd) {
+      if (!script) {
+        script = document.createElement('script')
+        script.id = scriptId
+        script.type = 'application/ld+json'
+        document.head.appendChild(script)
+      }
+      script.textContent = JSON.stringify(jsonLd)
+    } else if (script) {
+      script.remove()
+    }
+  }, [title, description, image, canonical, jsonLd])
 
   return null
 }
+
+
+
 
 
 

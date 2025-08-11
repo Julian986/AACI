@@ -7,10 +7,11 @@ Sitiow web para sacar ideas:
 - https://template.hasthemes.com/glaxdu/glaxdu/about-us.html
 - https://html.rovadex.com/html-informex/?storefront=envato-elements
 
-Mis opiniones
+A IMPLEMENTAR:
  - Me gusta la idea de imagen de fondo al inicio de la web.
  - Tiene un color verde oscuro en su institucion, es buena opcion probar por ahi
  - Implementar un timeline
+ - Poner
 
 
 # AACI Mar del Plata — Sitio institucional
