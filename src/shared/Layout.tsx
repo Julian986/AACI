@@ -1,4 +1,6 @@
 import { useMemo, useState, useEffect } from 'react'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 import { Outlet, Link, NavLink } from 'react-router-dom'
 import site from '../content/site'
 import WhatsappFloat from '../components/WhatsappFloat'

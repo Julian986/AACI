@@ -2,12 +2,14 @@ import { Link } from 'react-router-dom'
 import site from '../content/site'
 import Hero from '../components/Hero'
 import Section from '../components/Section'
-import FeatureCard from '../components/FeatureCard'
+// import FeatureCard from '../components/FeatureCard'
 import ImageCard from '../components/ImageCard'
 import StatsSplit from '../components/StatsSplit'
 import CourseCard from '../components/CourseCard'
-import Stat from '../components/Stat'
+// import Stat from '../components/Stat'
 import Seo from '../components/Seo'
+// import TestimonialQuote from '../components/TestimonialQuote'
+import TestimonialsCarousel from '../components/TestimonialsCarousel'
 
 export default function Home() {
   return (
@@ -39,46 +41,40 @@ export default function Home() {
         </div>
         <div className="mt-10 grid gap-8 md:grid-cols-3">
           <ImageCard
-            src="/images/placeholder-1.svg"
-            alt="AACI — Aula"
-            title="Aulas y recursos"
-            description="Espacios cuidados y materiales actualizados para favorecer el aprendizaje."
+            src="https://scontent.fmdq6-1.fna.fbcdn.net/v/t39.30808-6/481914922_9118709678237099_2210731255445127606_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFjiP-TJhVOclJ2NOWDFZepNgZdw47ZRMY2Bl3DjtlExpR89g5Vj5_51Wv1eDBBdwPIsvvrVxSbTKUWM6vsqykP&_nc_ohc=QG-Qkd9RWPMQ7kNvwFKUi_Q&_nc_oc=AdkYNYsFUh8-5VU3AXedYTPMY7XAhne9KmrPE0M-1D3ipSTRxTVxGki0UEBYVotV6pMUaPmWHDwV1XPzBeJfJGTd&_nc_zt=23&_nc_ht=scontent.fmdq6-1.fna&_nc_gid=mUMH03OuQRHU_3el7C4e-w&oh=00_AfUSC7t1F7Ysscz5upT9rYCrEe4PveRtrzpCVhzyAS4KXg&oe=68A135DA"
+            alt="AACI — Aulas y estudiantes"
+            title="Aulas y estudiantes"
+            description="Aulas equipadas, clima de estudio y recursos actuales para aprender con comodidad."
           />
           <ImageCard
-            src="/images/placeholder-3.svg"
-            alt="AACI — Estudiantes"
-            title="Grupos reducidos"
-            description="Atención personalizada y clima de confianza en cada clase."
-          />
-          <ImageCard
-            src="/images/placeholder-4.svg"
+            src="https://scontent.fmdq6-1.fna.fbcdn.net/v/t39.30808-6/503846847_9741635389277855_1836969040858731267_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeHRU1rYzQvS_dQORxAq_nR2eZUbpP3rt_B5lRuk_eu38K7wmeDH6oF2NrQlt_OV7Myms-i42jB9fosg0XRS9XPf&_nc_ohc=Xy57iF6Q5MkQ7kNvwERQFqg&_nc_oc=AdkyFbFu0OGqZFNt8XMeGpjKuOJ1G7DVEXOdhPK_fGqrYJnhQTXyyxKa_12pl4gp7Bnis6DHE64edrn1OVOzgr4f&_nc_zt=23&_nc_ht=scontent.fmdq6-1.fna&_nc_gid=TDI9xOCYfLSIMyK0FJimXg&oh=00_AfU53Wr7J3C4ktMStv8OdrInnJBiugq90u40d-TaLBqT3g&oe=68A13955"
             alt="AACI — Biblioteca"
-            title="Comunidad y cultura"
-            description="Actividades y propuestas que fortalecen el vínculo con el inglés."
+            title="Biblioteca"
+            description="Biblioteca con material en inglés y préstamo de libros para acompañar tu progreso."
+          />
+          <ImageCard
+            src="https://scontent.fmdq6-1.fna.fbcdn.net/v/t39.30808-6/481354471_9119498741491526_8148325617762946876_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeE-obITFrcU46BJ5ImESFDwg8tHPOaHMq-Dy0c85ocyrx7-v2ICOC7uY4qUFKvO0i6IZwYCUVC3-shIzaS9c_I_&_nc_ohc=My5lD5P7ks0Q7kNvwGNdUIF&_nc_oc=AdlBHG5JsN5F5GCBHvLbKd0mR4JLxu6Cs4A9RiExgmyzWOZ5C0koU3_XHOGVxajXDmbqlXSmHN-kW0qrTFCaKadk&_nc_zt=23&_nc_ht=scontent.fmdq6-1.fna&_nc_gid=eZmaJuwCmAjefMyC_e8DWg&oh=00_AfWpyKMmPg2AoFA6qRu9bZeL8_JcVrf3SVcD10lcGgBw3w&oe=68A160E9"
+            alt="AACI — Grupos reducidos"
+            title="Grupos reducidos"
+            description="Grupos chicos para participar más, practicar con confianza y recibir seguimiento cercano."
           />
         </div>
       </Section>
 
       <StatsSplit />
 
-      <Section title="Resultados reales" subtitle="Excelencia académica con calidez humana.">
-        <div className="grid gap-4 md:grid-cols-4">
-          <Stat label="Años enseñando" value="80+" />
-          <Stat label="Niveles" value="3" />
-          <Stat label="Alumnos por grupo" value="8–12" />
-          <Stat label="Exámenes prep." value="Cambridge/Trinity" />
-        </div>
-      </Section>
+      
 
-      <Section title="Nuestros pilares">
-        <div className="grid gap-6 md:grid-cols-3">
-          <FeatureCard title="Grupos reducidos" description="Aprendizaje cercano y seguimiento personalizado." />
-          <FeatureCard title="Docentes con experiencia" description="Acompañamiento en cada etapa del proceso." />
-          <FeatureCard title="Comunidad" description="Vínculo con familias y estudiantes." />
-        </div>
-      </Section>
+      {/* Secciones removidas a pedido: Resultados reales y Nuestros pilares */}
 
-      <Section title="Nuestros cursos" subtitle="Segmentados por edades y niveles.">
+      <Section
+        title="Nuestros cursos"
+        subtitle="Segmentados por edades y niveles."
+        align="center"
+        titleClassName="text-[41px] font-extrabold mb-[23px]"
+        subtitleAs="h2"
+        subtitleClassName="mt-2 text-slate-700 text-left text-[20px] font-normal"
+      >
         <div className="grid gap-6 md:grid-cols-3">
           {site.courses.segments.map((c) => (
             <CourseCard key={c.title} title={c.title} description={c.description} imageUrl={c.imageUrl} />
@@ -89,20 +85,16 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section title="Testimonios">
-        <ul className="grid gap-6 md:grid-cols-3">
-          {site.testimonials.slice(0, 3).map((t, i) => (
-            <li key={i} className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-              <blockquote className="text-sm text-slate-800">“{t.quote}”</blockquote>
-              <p className="mt-2 text-xs text-slate-600">{t.name} — {t.role}</p>
-            </li>
-          ))}
-        </ul>
-        <Link to="/testimonios" className="mt-4 inline-block text-indigo-700 hover:underline text-sm">Ver más testimonios</Link>
+      <Section title="Testimonios" align="center" titleClassName="text-[37px] font-bold mb-[45px]">
+        <TestimonialsCarousel
+          items={site.testimonials.map(t => ({ quote: t.quote, name: t.name, role: t.role }))}
+          className="max-w-6xl mx-auto"
+        />
+        {/* <Link to="/testimonios" className="mt-4 inline-block text-indigo-700 hover:underline text-sm">Ver más testimonios</Link> */}
       </Section>
 
       <Section title="¿Listos para empezar?">
-        <div className="rounded-xl bg-indigo-600 text-white p-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="rounded-xl text-white p-8 flex flex-col md:flex-row items-center justify-between gap-4" style={{ backgroundColor: site.brandColor }}>
           <div>
             <h3 className="text-xl font-semibold">Agendá una visita o escribinos por WhatsApp.</h3>
             <p className="text-sm opacity-90">Respondemos de Lun a Vie {site.contact.hours.split(' ')[2] ?? '14:00–20:00'}.</p>

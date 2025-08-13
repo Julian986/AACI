@@ -7,7 +7,12 @@ export default function CourseCard({ title, description, imageUrl }: CourseCardP
   return (
     <article className="rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow transition-shadow overflow-hidden">
       {imageUrl && (
-        <img src={imageUrl} alt="" className="h-40 w-full object-cover" loading="lazy" />
+        <img
+          src={imageUrl}
+          alt=""
+          className="h-40 w-full object-cover object-center transform scale-[1.06]"
+          loading="lazy"
+        />
       )}
       <div className="p-6">
       <header>

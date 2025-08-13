@@ -23,3 +23,29 @@ body {
 }
 .animate-accordion-down { animation: accordion-down 220ms ease-out; }
 .animate-accordion-up { animation: accordion-up 220ms ease-out; }
+
+/* slick overrides (después de slick.css) */
+.slick-dots {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+}
+.slick-dots li button { width: 14px; height: 6px; padding: 0; }
+.slick-dots li button:before {
+  content: '';
+  opacity: 1 !important;
+  color: transparent !important;
+  width: 6px;
+  height: 6px;
+  display: block;
+  border-radius: 9999px;
+  background: #cbd5e1;
+  transition: all 200ms ease;
+}
+.slick-dots li.slick-active button:before {
+  width: 6px;
+  border-radius: 9999px;
+  background: #2C7BB7;
+}

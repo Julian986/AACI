@@ -1,4 +1,17 @@
 
+Tasks
+- Hacer carrousel los testimonios
+- Cambiar el color lila de fondo de ese container.
+- Buscar iconos
+
+
+
+
+
+
+
+
+
 Sitiow web para sacar ideas:
 - https://www.cambridgeenglish.org/latinamerica/
 - https://www.ef.com.ar/pg/inglaterra/
@@ -12,6 +25,8 @@ A IMPLEMENTAR:
  - Tiene un color verde oscuro en su institucion, es buena opcion probar por ahi
  - Implementar un timeline
  - Poner
+
+
 
 
 # AACI Mar del Plata — Sitio institucional

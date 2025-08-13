@@ -9,8 +9,8 @@ const site = {
   logoUrl:
     'https://scontent.fmdq6-1.fna.fbcdn.net/v/t39.30808-1/311996228_634859431446968_1532899727758762642_n.png?stp=dst-png_s200x200&_nc_cat=101&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeFSGsg7jddq2QZ5RmqY7vqIXS-3HvvgRtJdL7ce--BG0lTeYPgSvbqH0-4PUnNH7rKLrDs9kkFxMim7hxP09WyO&_nc_ohc=y8IrvvkvMukQ7kNvwGqwu5p&_nc_oc=Admzy9PJnk2bxmQmufatj3D9hUzLpvWcf4e6lpU7FD3X3ey3pmI0MFwC-px-oYX5N6tzcfTNZC6Tu6n_35gsNGJd&_nc_zt=24&_nc_ht=scontent.fmdq6-1.fna&_nc_gid=B_ictQSxIlzOH24fQ1gwKQ&oh=00_AfWE-BmDKEHr0hLoJIbJ6y8I-VFJ_7KhTLFSwbo624qdEA&oe=689C46BD',
   heroBackgroundUrl:
-    'https://scontent.fmdq6-1.fna.fbcdn.net/v/t39.30808-6/310124787_634859428113635_535602896506399436_n.png?_nc_cat=101&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeFOT-LVu7zngrKu5mAJmEy_e4CjsBNqf1Z7gKOwE2p_Vt_9-fh7n1FJZApbPXSTel4I85aLUky9GkHimZQlb0LA&_nc_ohc=6Y3oLxaoBLAQ7kNvwGoajii&_nc_oc=AdntKFprfq83W7LcJ8U-errRHbAHYbAH3orLl6YwXPE3IyK07Na7jR54MY1T2APADEhMaE9lue1BaXU2tl8_Rj2k&_nc_zt=23&_nc_ht=scontent.fmdq6-1.fna&_nc_gid=B_ictQSxIlzOH24fQ1gwKQ&oh=00_AfVAAfvLO42CcdATh8hReiTSOMsZwaDsHGrBRxBZKYHkMw&oe=689C71E9',
-  contact: {
+    '/imagen_fondo.png',
+    contact: {
     phone: '02234956513',
     email: 'contacto@aaci-mdp.org', // Editar
     address: 'Mar del Plata, Provincia de Buenos Aires', // Editar
@@ -36,6 +36,8 @@ const site = {
         title: 'Adolescentes',
         description:
           'Comunicación real, proyectos colaborativos y preparación académica. Grupos reducidos y atención personalizada.',
+        imageUrl:
+          'https://scontent.fmdq6-1.fna.fbcdn.net/v/t1.6435-9/89471551_2692685960839535_3187586476388909056_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFAieeX9BKedTahNh_T8b1kzyG5J3EbLVbPIbkncRstVgMPbXNGW8si0NwIjhow5NjTUUkt1aySUdj-leZq37cn&_nc_ohc=XvU39OS7YKgQ7kNvwHItHqF&_nc_oc=AdkqoYt7OtMYqtG9a_p9_1oOXnd6SJ673G13tmdINCr8ItvV_GB9e1IZkvuqJrnAN29oUy9v4zYqr7ejWDrlNL9K&_nc_zt=23&_nc_ht=scontent.fmdq6-1.fna&_nc_gid=JvBWpByC6TD3O16khkbHMg&oh=00_AfUb89TJWhn7uYqLK9lDYsvTQyMcvsXJvWH7tBnYAmhq3A&oe=68C326CC',
       },
       {
         title: 'Adultos',
@@ -77,6 +79,12 @@ const site = {
     { name: 'María G.', role: 'Madre de alumno', quote: 'Excelente acompañamiento y progreso real.' },
     { name: 'Julián R.', role: 'Estudiante', quote: 'Grupos chicos y clases dinámicas. Recomendado.' },
     { name: 'Elena P.', role: 'Adulta', quote: 'Me sentí cómoda desde la primera clase.' },
+    { name: 'Sofía L.', role: 'Estudiante', quote: 'Profes comprometidos y clases que motivan.' },
+    { name: 'Carlos M.', role: 'Padre', quote: 'Mi hija mejoró muchísimo su confianza al hablar.' },
+    { name: 'Ana V.', role: 'Profesional', quote: 'Contenido útil para el trabajo y buena práctica oral.' },
+    { name: 'Diego F.', role: 'Ex alumno', quote: 'La preparación para exámenes fue excelente.' },
+    { name: 'Lucía T.', role: 'Madre', quote: 'Acompañamiento cercano y comunicación clara.' },
+    { name: 'Matías C.', role: 'Estudiante', quote: 'Ambiente amigable y resultados visibles.' },
   ],
   gallery: [
     {
