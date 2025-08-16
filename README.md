@@ -1,5 +1,14 @@
 
 Tasks
+- Ver de mejorar la pagina de curso detail
+- Agregarle alguna cosita a la card de los planes de estudio
+- Pasar imagenes a webp y a cloudinary
+- Mejorar la pagina de ubicacion
+- Mejorar la pagina de Testimonios
+
+
+✅
+- Mejorar la posicion de las flechas
 - Hacer carrousel los testimonios
 - Cambiar el color lila de fondo de ese container.
 - Buscar iconos
@@ -58,7 +67,7 @@ Este proyecto es un sitio web institucional para la Asociación Argentina de Cul
 
 ## WhatsApp
 
-El botón apunta a `https://wa.me/542234956513` con un mensaje prellenado. Podés cambiarlo en `src/content/site.ts`.
+El botón apunta a `https://wa.me/542234478017` con un mensaje prellenado. Podés cambiarlo en `src/content/site.ts`.
 
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

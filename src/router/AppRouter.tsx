@@ -4,7 +4,6 @@ import Courses from '../pages/Courses'
 import Curriculum from '../pages/Curriculum'
 import Exams from '../pages/Exams'
 import Enroll from '../pages/Enroll'
-import Location from '../pages/Location'
 import Contact from '../pages/Contact'
 import Gallery from '../pages/Gallery'
 import Testimonials from '../pages/Testimonials'
@@ -25,7 +24,7 @@ const router = createBrowserRouter([
       { path: 'plan-de-estudios', element: <Curriculum /> },
       { path: 'examenes', element: <Exams /> },
       { path: 'inscripcion', element: <Enroll /> },
-      { path: 'ubicacion', element: <Location /> },
+      // { path: 'ubicacion', element: <Location /> },
       { path: 'contacto', element: <Contact /> },
       { path: 'galeria', element: <Gallery /> },
       { path: 'testimonios', element: <Testimonials /> },

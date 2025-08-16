@@ -1,5 +1,8 @@
 import { useForm } from 'react-hook-form'
 import Seo from '../components/Seo'
+import Section from '../components/Section'
+import LazyMap from '../components/LazyMap'
+const MAP_IFRAME = `https://www.google.com/maps?q=-38.0053915,-57.5529944&z=16&output=embed`
 import site from '../content/site'
 
 type ContactValues = {
@@ -25,6 +28,10 @@ export default function Contact() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
       <Seo title="Contacto — AACI Mar del Plata" description="Ponete en contacto con nuestra institución. Horarios, email y teléfono." />
+
+      <Section title="Dónde estamos" subtitle="Mar del Plata, Provincia de Buenos Aires. Consultá horarios y cómo llegar.">
+        <LazyMap iframeSrc={MAP_IFRAME} mapsLink={site.links.maps} title="Mapa AACI Mar del Plata" />
+      </Section>
 
       <div className="grid gap-10 lg:grid-cols-2">
         <div className="relative isolate overflow-hidden rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-8 sm:p-10">

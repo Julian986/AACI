@@ -4,7 +4,7 @@
 :root { color-scheme: light; }
 html { scroll-behavior: smooth; }
 body {
-  background-color: #f8fafc;
+  background-color: none;
   color: #0f172a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -32,20 +32,21 @@ body {
   gap: 6px;
   margin-top: 6px;
 }
-.slick-dots li button { width: 14px; height: 6px; padding: 0; }
+.slick-dots li button { width: 16px; height: 16px; padding: 0; line-height: 0; }
 .slick-dots li button:before {
-  content: '';
+  content: '' !important;
   opacity: 1 !important;
   color: transparent !important;
-  width: 6px;
-  height: 6px;
-  display: block;
-  border-radius: 9999px;
-  background: #cbd5e1;
-  transition: all 200ms ease;
+  width: 9px !important;
+  height: 9px !important;
+  display: block !important;
+  border-radius: 9999px !important;
+  background: #cbd5e1 !important;
+  font-size: 0 !important;
+  transform: none !important;
+  box-shadow: none !important;
+  transition: background-color 200ms ease !important;
 }
 .slick-dots li.slick-active button:before {
-  width: 6px;
-  border-radius: 9999px;
-  background: #2C7BB7;
+  background: #2C7BB7 !important;
 }

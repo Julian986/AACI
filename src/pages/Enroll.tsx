@@ -77,7 +77,7 @@ export default function Enroll() {
           {formState.errors.message && <p className="mt-1 text-sm text-red-600">{formState.errors.message.message}</p>}
         </div>
         <div className="flex flex-wrap gap-3">
-          <button type="submit" className="inline-flex items-center justify-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Enviar</button>
+          <button type="submit" className="inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-semibold text-white shadow-sm hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2" style={{ backgroundColor: 'rgb(0 0 0)' }}>Enviar</button>
           <a href={site.links.whatsappUrl} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500">WhatsApp</a>
         </div>
         <p className="text-xs text-slate-500">También podés escribirnos a <a className="text-indigo-700 hover:underline" href={`mailto:${site.contact.email}`}>{site.contact.email}</a>.</p>

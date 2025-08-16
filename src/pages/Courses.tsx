@@ -76,30 +76,36 @@ export default function Courses() {
 
       <Section title="Plan de estudios por año" subtitle="Contenidos por año con lecturas sugeridas (6º año).">
         <div className="grid gap-6 md:grid-cols-3">
-          <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-            <h3 className="font-semibold text-slate-900">1º año</h3>
-            <p className="mt-1 text-sm text-slate-700">{site.curriculum.year1}</p>
-          </article>
-          <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-            <h3 className="font-semibold text-slate-900">2º año</h3>
-            <p className="mt-1 text-sm text-slate-700">{site.curriculum.year2}</p>
-          </article>
-          <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-            <h3 className="font-semibold text-slate-900">3º año</h3>
-            <p className="mt-1 text-sm text-slate-700">{site.curriculum.year3}</p>
-          </article>
-          <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-            <h3 className="font-semibold text-slate-900">4º año</h3>
-            <p className="mt-1 text-sm text-slate-700">{site.curriculum.year4}</p>
-          </article>
-          <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-            <h3 className="font-semibold text-slate-900">5º año</h3>
-            <p className="mt-1 text-sm text-slate-700">{site.curriculum.year5}</p>
-          </article>
-          <article className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-            <h3 className="font-semibold text-slate-900">6º año</h3>
-            <p className="mt-1 text-sm text-slate-700">{site.curriculum.year6}</p>
-          </article>
+          {[
+            { title: '1º año', content: site.curriculum.year1, chips: ['Saludos', 'Colores', 'Aula'] },
+            { title: '2º año', content: site.curriculum.year2, chips: ['Rutinas', 'Familia', 'Presente simple'] },
+            { title: '3º año', content: site.curriculum.year3, chips: ['Ciudad', 'Clima', 'Pasado simple'] },
+            { title: '4º año', content: site.curriculum.year4, chips: ['Geografía', 'Presentaciones', 'Mapas'] },
+            { title: '5º año', content: site.curriculum.year5, chips: ['Historia', 'Biografías', 'Línea de tiempo'] },
+            { title: '6º año', content: site.curriculum.year6, chips: ['Literatura', 'Análisis', 'Escritura'] },
+          ].map(({ title, content, chips }) => (
+            <article key={title} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm hover:shadow transition-shadow">
+              <div className="flex items-center gap-3">
+                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-slate-100 text-slate-700">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                    <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+                  </svg>
+                </span>
+                <h3 className="font-semibold text-slate-900">{title}</h3>
+              </div>
+              <p className="mt-2 text-sm text-slate-700">{content}</p>
+              <ul className="mt-3 flex flex-wrap gap-2 text-xs text-slate-700">
+                {chips.map((chip) => (
+                  <li key={chip} className="inline-flex items-center gap-1 rounded-full bg-slate-50 px-2.5 py-1 ring-1 ring-slate-200">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg>
+                    {chip}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
         <div className="mt-8">
           <h4 className="font-semibold text-slate-900">Lecturas sugeridas (6º año)</h4>

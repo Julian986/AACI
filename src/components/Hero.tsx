@@ -16,10 +16,9 @@ export default function Hero({ eyebrow, title, subtitle, ctas = [], bgUrl }: Her
       {/* Fondo con imagen y capas de degradado para mayor profundidad */}
       <div className="absolute inset-0">
         <div
-          className="h-full w-full bg-cover bg-no-repeat"
+          className="h-full w-full bg-cover bg-no-repeat bg-center md:bg-right"
           style={{
             backgroundImage: bgUrl ? `url(${bgUrl})` : undefined,
-            backgroundPosition: 'right center',
           }}
           aria-hidden
         />
@@ -43,7 +42,7 @@ export default function Hero({ eyebrow, title, subtitle, ctas = [], bgUrl }: Her
             </h1>
             {subtitle && (
               <p
-                className="mt-5 max-w-2xl text-slate-100/90 whitespace-pre-line"
+                className="mt-5 max-w-2xl text-slate-100/90 whitespace-pre-line rounded-2xl border border-white/15 bg-white/10 px-3 py-2 backdrop-blur-md inline-block md:bg-transparent md:border-0 md:px-0 md:py-0 md:backdrop-blur-0"
                 style={{ fontSize: 'larger' }}
               >
                 {subtitle}
@@ -156,8 +155,7 @@ export default function Hero({ eyebrow, title, subtitle, ctas = [], bgUrl }: Her
                   href={site.links.whatsappUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center rounded-md px-4 py-2.5 text-sm font-semibold text-white shadow-sm"
-                  style={{ backgroundColor: brandColor }}
+                  className="inline-flex items-center justify-center rounded-md bg-white px-4 py-2.5 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-50"
                 >
                   Escribinos
                 </a>

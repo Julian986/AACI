@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { Outlet, Link, NavLink } from 'react-router-dom'
@@ -14,13 +14,13 @@ function Header() {
     ['Exámenes', '/examenes'],
     ['Galería', '/galeria'],
     ['Testimonios', '/testimonios'],
-    ['Ubicación', '/ubicacion'],
     ['Contacto', '/contacto'],
   ]
-  const activeStyle = useMemo(() => ({ borderBottomColor: site.brandColor, borderBottomWidth: '2px' }), [])
   return (
     <header className="bg-white sticky top-0 z-50 border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 h-16 flex items-center gap-4">
+      <div className="relative max-w-7xl mx-auto px-4 h-16 flex items-center gap-4 justify-end md:justify-start">
+        {/* Texto institucional - solo mobile */}
+        <span className="md:hidden text-md font-bold text-slate-700 mr-auto">AACI • Desde 1944</span>
         <Link to="/" className="flex items-center gap-2 shrink-0" aria-label="AACI Mar del Plata">
           <img src={site.logoUrl || '/logo-aaci.svg'} alt="AACI" className="h-8 w-auto rounded" decoding="async" />
           <span className="sr-only">AACI Mar del Plata</span>
@@ -67,7 +67,7 @@ function Header() {
           <Link
             to="/inscripcion"
             className="inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-semibold text-white shadow-sm hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
-            style={{ backgroundColor: site.brandColor }}
+            style={{ backgroundColor: 'rgb(39 41 43)' }}
           >
             Inscribirme
           </Link>
@@ -81,10 +81,12 @@ function Header() {
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5"><path d="M3 6h18v2H3V6Zm0 5h18v2H3v-2Zm0 5h18v2H3v-2Z"/></svg>
         </button>
       </div>
-      {mobileOpen && (
-        <div className="md:hidden border-t border-slate-200 bg-white">
+      <div
+        className={`md:hidden absolute left-0 right-0 top-full bg-white border-t border-slate-200 shadow-lg z-50 overflow-hidden transition-all duration-300 ease-out ${mobileOpen ? 'opacity-100 max-h-[calc(100vh-4rem)]' : 'pointer-events-none opacity-0 max-h-0'}`}
+        aria-hidden={!mobileOpen}
+      >
           <div className="px-4 py-3">
-            <div className="relative">
+            <div className="relative w-85 max-w-full">
               <span className="pointer-events-none absolute inset-y-0 left-3 flex items-center text-slate-400">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27a6.471 6.471 0 001.57-4.23C15.99 6.01 13 3 9.5 3S3 6.01 3 9.5 6.01 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
               </span>
@@ -97,12 +99,16 @@ function Header() {
                 key={href}
                 to={href}
                 onClick={() => setMobileOpen(false)}
-                className={({ isActive }) =>
-                  `block py-2 border-b-2 ${isActive ? 'text-slate-900 font-medium' : 'text-slate-800 border-transparent'}`
-                }
-                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                className="block py-2 text-slate-800"
               >
-                {label}
+                {({ isActive }) => (
+                  <span
+                    className={`inline-block w-[76%] border-b-2 ${isActive ? 'text-slate-900 font-medium' : ''}`}
+                    style={{ borderBottomColor: isActive ? site.brandColor : 'transparent' }}
+                  >
+                    {label}
+                  </span>
+                )}
               </NavLink>
             ))}
             <div className="flex gap-2 pt-2">
@@ -119,14 +125,13 @@ function Header() {
                 to="/inscripcion"
                 onClick={() => setMobileOpen(false)}
                 className="flex-1 inline-flex items-center justify-center rounded-md px-3 py-2 text-sm font-semibold text-white"
-                style={{ backgroundColor: site.brandColor }}
+                style={{ backgroundColor: 'rgb(39 41 43)' }}
               >
                 Inscribirme
               </Link>
             </div>
           </nav>
-        </div>
-      )}
+      </div>
     </header>
   )
 }

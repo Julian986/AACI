@@ -1,7 +1,7 @@
 import site from '../content/site'
 
 export default function StatsSplit() {
-  const imageSrc = site.gallery?.[0]?.src || site.heroBackgroundUrl || '/images/placeholder-9.svg'
+  const imageSrc = 'https://res.cloudinary.com/dzoupwn0e/image/upload/v1755213217/102764609_2905632769544852_7348573815944458135_n_ybdc95.webp'
   return (
     <section className="mx-auto max-w-6xl px-4">
       <div className="relative isolate overflow-hidden rounded-1xl bg-gradient-to-br from-white to-slate-50 shadow-xl">

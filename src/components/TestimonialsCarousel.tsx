@@ -13,7 +13,7 @@ const PrevArrow = ({ onClick }: CustomArrowProps) => (
   <button
     aria-label="Anterior"
     onClick={onClick}
-    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 border border-gray-200 cursor-pointer"
+    className="absolute -left-3 md:-left-6 top-[0%] md:top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 border border-gray-200 cursor-pointer"
   >
     <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
@@ -25,7 +25,7 @@ const NextArrow = ({ onClick }: CustomArrowProps) => (
   <button
     aria-label="Siguiente"
     onClick={onClick}
-    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 border border-gray-200 cursor-pointer"
+    className="absolute -right-3 md:-right-6 top-[0%] md:top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 border border-gray-200 cursor-pointer"
   >
     <svg className="w-6 h-6 text-gray-600 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path>
