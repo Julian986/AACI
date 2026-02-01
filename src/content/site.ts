@@ -12,9 +12,9 @@ const site = {
     'https://res.cloudinary.com/dzoupwn0e/image/upload/v1755213221/imagen_fondo_neck0l.webp',
     contact: {
     phone: '2234478017',
-    email: 'contacto@aaci-mdp.org', // Editar
+    email: 'gloria@aaci-mdp.org', // Editar
     address: 'Mar del Plata, Provincia de Buenos Aires', // Editar
-    hours: 'Lun a Vie 14:00–20:00', // Editar
+    hours: 'Miércoles y viernes 16:00–19:00', // Editar
   },
   links: {
     facebook: 'https://www.facebook.com/aacimdp/?locale=es_LA',

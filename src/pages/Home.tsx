@@ -103,7 +103,7 @@ export default function Home() {
         <div className="rounded-xl text-white p-8 flex flex-col md:flex-row items-center justify-between gap-4" style={{ backgroundColor: site.brandColor }}>
           <div>
             <h3 className="text-xl font-semibold">Agendá una visita o escribinos por WhatsApp.</h3>
-            <p className="text-sm opacity-90">Respondemos de Lun a Vie {site.contact.hours.split(' ')[2] ?? '14:00–20:00'}.</p>
+            <p className="text-sm opacity-90">Respondemos {site.contact.hours}.</p>
           </div>
           <div className="flex gap-3">
             <a href={site.links.whatsappUrl} target="_blank" rel="noreferrer" className="rounded-md bg-white px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-50">Escribinos</a>
