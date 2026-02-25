@@ -202,6 +202,10 @@ function Footer() {
 
         <div className="mt-10 border-t border-gray-900/10 pt-6 sm:mt-12">
           <p className="text-sm leading-6 text-gray-500">© {new Date().getFullYear()} AACI Mar del Plata. Todos los derechos reservados.</p>
+          <p className="text-sm leading-6 text-gray-500 mt-2">
+            Creado por{' '}
+            <a href="https://glomun.com" target="_blank" rel="noreferrer" className="underline hover:text-gray-700">glomun.com</a>
+          </p>
         </div>
       </div>
     </footer>
